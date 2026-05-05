@@ -86,7 +86,8 @@ body {
 
 /* ===== PROMO SECTION ===== */
 .promo-section {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background: #f8f9fa;
 }
 
 .promo-wrapper {
@@ -95,13 +96,31 @@ body {
     display: flex;
     gap: 40px;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+}
+
+/* Desktop: image left, text right */
+.promo-image {
+    order: 1;
+    flex: 0 0 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-content {
+    order: 2;
+    flex: 1 1 480px;
+    max-width: 600px;
 }
 
 .promo-image img {
     width: 100%;
     max-width: 520px;
     border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    display: block;
 }
 
 /* TEXT */
@@ -152,6 +171,41 @@ body {
 @media (max-width: 768px) {
     .promo-wrapper {
         flex-direction: column;
+        gap: 18px;
+    }
+
+    .promo-image,
+    .promo-content {
+        order: initial;
+        flex: none;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .promo-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .promo-image img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    /* Center text on mobile and keep features readable */
+    .promo-content {
+        text-align: center;
+    }
+
+    .promo-features {
+        display: inline-block;
+        text-align: left;
+        margin: 12px auto 0;
+    }
+
+    .promo-features li:before {
+        left: -20px;
     }
 }
 </style>
@@ -250,6 +304,17 @@ body {
     }
   ]
 }
+</script>
+</script>
+
+<script>
+function sendHeight() {
+    const height = document.body.scrollHeight;
+    parent.postMessage({ iframeHeight: height }, "*");
+}
+
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
 </script>
 
 </body>
