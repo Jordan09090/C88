@@ -1,207 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 🔥 BETTER FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-    .booking-section {
-        padding: 60px 20px;
-        background: white;
-        text-align: center;
-        margin: 0 auto 40px;
-        max-width: 800px;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-    .booking-section h2 {
-        margin-bottom: 20px;
-        font-size: 2rem;
-        font-weight: 600;
-        color: #1d2a34;
-    }
-    .location {
-        margin-bottom: 30px;
-        font-size: 1.1rem;
-        color: #42545e;
-        font-weight: 500;
-    }
-    .booking-form {
-        display: inline-block;
-        text-align: left;
-    }
-    .booking-form label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: 600;
-        color: #1d2a34;
-    }
-    .booking-form select {
-        padding: 12px;
-        font-size: 1rem;
-        margin-bottom: 20px;
-        border: 2px solid #e7ca24;
-        border-radius: 6px;
-        width: 100%;
-        max-width: 260px;
-        background: white;
-        color: #42545e;
-    }
-    .booking-form button {
-        padding: 12px 30px;
-        font-size: 1rem;
-        background: #e7ca24;
-        color: #1d2a34;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 600;
-    }
-    .booking-form button:hover {
-        background: #d4b820;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(231, 202, 36, 0.4);
-    }
-    .promo-button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 28px;
-        background: #1d2a34;
-        color: #ffffff;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-    .promo-button:hover {
-        background: #2d3f50;
-        transform: translateY(-2px);
-    }
-    .promo-section {
-        padding: 60px 20px;
-        background: #ffffff;
-    }
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #ffffff;
+}
+
+/* ===== BOOKING SECTION ===== */
+.booking-section {
+    padding: 60px 20px;
+    background: white;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.booking-section h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1d2a34;
+}
+
+.location {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    color: #6b7b85;
+}
+
+.booking-form {
+    display: inline-block;
+    text-align: left;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* 🔥 IMPROVED DROPDOWN */
+.booking-form select {
+    padding: 12px 14px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    border: 2px solid #e7ca24;
+    border-radius: 8px;
+    width: 260px;
+    background: white;
+    transition: 0.2s;
+}
+
+.booking-form select:focus {
+    outline: none;
+    border-color: #d4b820;
+}
+
+/* 🔥 BUTTON (CLEANER) */
+.booking-form button {
+    padding: 12px 28px;
+    font-size: 1rem;
+    background: #e7ca24;
+    color: #1d2a34;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.booking-form button:hover {
+    background: #d4b820;
+    transform: translateY(-1px);
+}
+
+/* ===== PROMO SECTION ===== */
+.promo-section {
+    padding: 60px 20px;
+}
+
+.promo-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.promo-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px;
+}
+
+/* TEXT */
+.promo-content h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #1d2a34;
+    margin-bottom: 15px;
+}
+
+.promo-content p {
+    font-size: 1rem;
+    color: #5c6b75;
+    line-height: 1.6;
+}
+
+.promo-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.promo-features li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.promo-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #e7ca24;
+}
+
+/* BUTTON */
+.promo-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 26px;
+    background: #1d2a34;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
     .promo-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        align-items: center;
+        flex-direction: column;
     }
-    .promo-image,
-    .promo-content {
-        flex: 1 1 320px;
-    }
-    .promo-image {
-        max-width: 520px;
-        width: 100%;
-    }
-    .promo-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        display: block;
-    }
-    .promo-content h2 {
-        font-size: 2rem;
-        font-weight: 600;
-        color: #1d2a34;
-        margin-bottom: 20px;
-    }
-    .promo-content p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #42545e;
-        margin-bottom: 20px;
-    }
-    .promo-features {
-        list-style: none;
-        padding: 0;
-    }
-    .promo-features li {
-        font-size: 1rem;
-        color: #42545e;
-        margin-bottom: 10px;
-        position: relative;
-        padding-left: 25px;
-    }
-    .promo-features li:before {
-        content: '✓';
-        color: #e7ca24;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-    @media (max-width: 768px) {
-        .booking-section {
-            padding: 40px 20px;
-        }
-        .promo-section {
-            padding: 40px 20px;
-        }
-        .promo-wrapper {
-            flex-direction: column;
-        }
-    }
+}
 </style>
+</head>
+
+<body>
 
 <section class="booking-section">
     <h2>Book Boardroom Perth - Select Duration</h2>
-    <p class="location">Location: 598 Albany Highway, Victoria Park, Perth WA</p>
+    <p class="location">598 Albany Highway, Victoria Park, Perth WA</p>
+
     <div class="booking-form">
-        <label for="duration">Choose Booking Duration:</label>
+        <label>Choose Booking Duration:</label>
+
+        <!-- ✅ YOUR EXACT FORMAT -->
         <select id="duration">
-            <option value="1">1 Hour Meeting Room</option>
-            <option value="2">2 Hours Boardroom Rental</option>
-            <option value="3">3 Hours Office Space Booking</option>
-            <option value="4">4 Hours Professional Meeting Room</option>
+            <option value="1">1 Hour Booking</option>
+            <option value="2">2 Hour Booking</option>
+            <option value="3">3 Hour Booking</option>
+            <option value="4">4 Hour Booking</option>
+            <option value="5">5 Hour Booking</option>
+            <option value="6">6 Hour Booking</option>
+            <option value="7">7 Hour Booking</option>
+            <option value="8">8 Hour Booking</option>
+            <option value="9">9 Hour Booking</option>
+            <option value="10">10 Hour Booking</option>
         </select>
+
         <br>
-        <button onclick="bookNow()">Book Now</button>
+
+        <button onclick="
+            var d=document.getElementById('duration').value;
+            window.open('https://calcom.offios.space/conference-room/'+d,'_blank');
+        ">
+            Book Now
+        </button>
     </div>
 </section>
 
 <section class="promo-section">
     <div class="promo-wrapper">
         <div class="promo-image">
-            <img src="https://jordan09090.github.io/C88/Boardroom-800x600-1.png" alt="Boardroom desk setup in Victoria Park Perth office space">
+            <img src="https://jordan09090.github.io/C88/Boardroom-800x600-1.png">
         </div>
+
         <div class="promo-content">
             <h2>Premium Boardroom Facilities in Perth</h2>
-            <p>Our boardroom in Victoria Park offers high-speed internet, comfortable ergonomic seating, and state-of-the-art presentation tools. Perfect for client meetings, team collaborations, or virtual conferences in Perth. Enjoy 24/7 access in a secure, professional environment with modern AV equipment and Wi-Fi connectivity.</p>
+            <p>
+                High-speed internet, ergonomic seating, and modern presentation tools for professional meetings.
+            </p>
+
             <ul class="promo-features">
-                <li>Modern AV equipment for presentations</li>
-                <li>High-speed Wi-Fi throughout</li>
-                <li>Comfortable seating for up to 12 people</li>
-                <li>Professional kitchen access included</li>
-                <li>24/7 secure access in Victoria Park</li>
+                <li>Modern AV equipment</li>
+                <li>High-speed Wi-Fi</li>
+                <li>Comfortable seating for 12 people</li>
+                <li>Kitchen access</li>
+                <li>24/7 secure access</li>
             </ul>
-            <a class="promo-button" href="https://offios.space/services/" target="_blank" rel="noopener noreferrer">Learn More About the Office Space</a>
+
+            <a class="promo-button" href="https://offios.space/services/" target="_blank">
+                Learn More
+            </a>
         </div>
     </div>
 </section>
 
-<script>
-function bookNow() {
-    const duration = document.getElementById('duration').value;
-    let url;
-    switch (duration) {
-        case '1':
-            url = 'https://example.com/book-1h';
-            break;
-        case '2':
-            url = 'https://example.com/book-2h';
-            break;
-        case '3':
-            url = 'https://example.com/book-3h';
-            break;
-        case '4':
-            url = 'https://example.com/book-4h';
-            break;
-        default:
-            url = 'https://example.com/book';
-    }
-    window.open(url, '_blank');
-}
-</script>
-
+<!-- SEO FAQ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -212,7 +229,7 @@ function bookNow() {
       "name": "What is included in the Perth boardroom booking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The boardroom booking includes access to a professionally equipped meeting room with high-speed Wi-Fi, AV presentation tools, ergonomic seating, and a professional kitchen area."
+        "text": "High-speed Wi-Fi, AV equipment, ergonomic seating, and kitchen access."
       }
     },
     {
@@ -220,33 +237,20 @@ function bookNow() {
       "name": "Where is the boardroom located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The boardroom is at 598 Albany Highway, Victoria Park, Perth WA, close to local transport and Perth business districts."
+        "text": "598 Albany Highway, Victoria Park, Perth WA."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I book the boardroom for just one hour?",
+      "name": "How long can I book?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can book the boardroom for 1 hour, 2 hours, 3 hours or 4 hours depending on your meeting needs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the Perth boardroom available after normal business hours?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, the space offers 24/7 secure access, so you can book outside standard business hours if needed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How many people fit in the boardroom?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The boardroom comfortably accommodates up to 12 people, making it ideal for client meetings, strategy sessions, or small workshops."
+        "text": "Bookings are available from 1 hour up to 10 hours."
       }
     }
   ]
 }
 </script>
+
+</body>
+</html>
