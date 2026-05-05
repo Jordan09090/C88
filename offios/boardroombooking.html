@@ -17,7 +17,8 @@ body {
 /* ===== BOOKING SECTION ===== */
 .booking-section {
     padding: 60px 20px;
-    background: white;
+    background: #ffffff;
+    background-image: none;
     text-align: center;
     margin: 40px auto;
     max-width: 800px;
@@ -87,7 +88,8 @@ body {
 /* ===== PROMO SECTION ===== */
 .promo-section {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: #ffffff;
+    background-image: none;
 }
 
 .promo-wrapper {
@@ -305,12 +307,11 @@ body {
   ]
 }
 </script>
-</script>
-
 <script>
 function sendHeight() {
-    const height = document.body.scrollHeight;
-    parent.postMessage({ iframeHeight: height }, "*");
+    const height = document.body.scrollHeight || document.documentElement.scrollHeight;
+    const buffered = Math.ceil(height * 1.1);
+    parent.postMessage({ iframeHeight: buffered }, "*");
 }
 
 window.addEventListener("load", sendHeight);
